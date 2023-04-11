@@ -12,15 +12,21 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 
+
 //Establish database connection 
 const uri = process.env.ATLAS_URI;
 
-mongoose.connect(uri,{useNewUrlParser: true});
+mongoose.connect(uri,{useNewUrlParser:true});
+
+
+
 const connection = mongoose.connection;
 
 connection.once('open',()=>{
-    console.log("MongoDB database Connection established succeccfully...");
-})
+    console.log("MongoDB database connection established successfully");
+}
+)
+
 
 //settingup Router
 
