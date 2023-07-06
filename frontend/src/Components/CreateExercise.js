@@ -14,7 +14,7 @@ function CreateExercise() {
     const [users,setUsers] = useState([]);
 
     useEffect(()=>{
-     axios.get('http://localhost:5000/users/')
+     axios.get('https://exercise-mern-app.onrender.com/users/')
      .then(resp =>{
       console.log(resp);
       if(resp.data.length>0){
@@ -38,7 +38,7 @@ const handleSubmit=(e)=>{
         date:date
     }
     console.log(exercise);
-  axios.post('http://localhost:5000/exercises/add',exercise)
+  axios.post('http://exercise-mern-app.onrender.com/exercises/add',exercise)
   .then(res=>console.log(res.data))
   .catch(err=>console.log(err))
 

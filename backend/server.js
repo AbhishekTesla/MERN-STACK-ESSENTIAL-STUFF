@@ -16,6 +16,8 @@ app.use(express.json());
 //Establish database connection 
 const uri = process.env.ATLAS_URI;
 
+console.log(uri);
+
 mongoose.connect(uri,{useNewUrlParser:true});
 
 
